@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <header id="high-scores">View High Scores</header>
-        <header id="timer">Time:</header>
 
+        <nav>
+            <section id="high-scores">View High Scores</section>
+            <section id="timer">Time:</section>
+    </nav>
+        
     <main>
         <h1>Answer the question?</h1>
         <p>This quiz will be styled with Java Script!</p>
-        <button id="start">Start</button>
-        <button class="one">Answer One</button>
-        <button class="two">Answer Two</button>
-        <button class="three">Answer Three</button>
-        <button class="four">Answer Four</button>
-    </main>        
+        <section class="mult-choice">
+            <button id="start">Start</button>
+            <button class="one">Answer One</button>
+            <button class="two">Answer Two</button>
+            <button class="three">Answer Three</button>
+            <button class="four">Answer Four</button>
+        </section>       
 
     <section id="submission">
         <form action="/action_page.php">
@@ -36,11 +39,13 @@
         <button class="View-high-scores"></button>
     </section>
 
-    <footer>
+    <section class="grade">
         <hr>
         <h2 class="Correct!"></h2>
         <h2 class="Wrong!"></h2>
-    </footer>
+    </section>
+
+</main> 
 
 <script src+="script.js"></script>    
 </body>
