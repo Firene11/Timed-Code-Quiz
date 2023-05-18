@@ -18,6 +18,12 @@ main {
     align-items: center;
 }
 
+card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 h1 {
     font-weight: bolder;
 }
