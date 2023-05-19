@@ -19,7 +19,8 @@ main {
     align-items: center;
 }
 
-card {
+card,
+.card-two {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -111,6 +112,5 @@ input[type=text] {
   }
 
   #score-buttons {
-    display: flex;
-    
+    margin-top: 0px;
   }
