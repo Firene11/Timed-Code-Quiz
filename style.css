@@ -109,3 +109,8 @@ input[type=text] {
     font-size: 14px;
     padding: 8px;
   }
+
+  #score-buttons {
+    display: flex;
+    
+  }
