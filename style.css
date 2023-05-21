@@ -60,6 +60,12 @@ label {
     width: 100%;
 }
 
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #start {
     margin: 10px;
     align-self: center;
