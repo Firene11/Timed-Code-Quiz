@@ -3,6 +3,7 @@
 
 function codeQuiz() {
 
+
 var timer = document.querySelector("#timer");
 var start = document.querySelector("#start");
 
@@ -13,7 +14,7 @@ var secondsSubtract = 10;
 var timerCountdown = setInterval(function() {
     secondsLeft--;
     timer.textContent = secondsLeft;
-	console.log('!');
+	console.log("Timer has started");
 
     if(secondsLeft === 0) {
         clearInterval(timerCountdown);
@@ -22,8 +23,22 @@ var timerCountdown = setInterval(function() {
 
 	}, 1000);
 });
-
 }
+
+var heading = document.querySelectorAll("h1");
+var paragraph = document.querySelectorAll("p");
+var description = document.querySelector("#description");
+var firstChoice = document.querySelector(".one");
+var secondChoice = document.querySelector(".two");
+var thirdChoice = document.querySelector(".three");
+var fourthChoice = document.querySelector(".four");
+var correctAnswer = document.querySelector(".correct");
+var wrongAnswer = document.querySelector(".wrong");
+var enterInitials = document.querySelector("form");
+
+
+     
+
 
 codeQuiz();
 
