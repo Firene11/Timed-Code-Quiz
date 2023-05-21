@@ -17,20 +17,27 @@
         
     <main>
         <card>
-        <h1>Timed Coding Quiz!</h1>
-        <p class="describe">Try to answer the following code-related questions within the time limit. But... keep in mind that 
-            wrong answers will deduct your score by 10 seconds.
-        </p>
-        <button id="start">Start Quiz</button>
+        <section class="intro">
+            <h1 class="header">Timed Coding Quiz!</h1>
+            <p class="describe">Try to answer the following code-related questions within the time limit. But... keep in mind that 
+            wrong answers will deduct your score by 10 seconds.</p>
+       
+            <button onclick="hide()" id="start">Start Quiz</button>
+        </section>
+
         <section class="mult-choice">
+            <h1 class="questions"></h1>
             <button class="one"></button>
             <button class="two"></button>
             <button class="three"></button>
             <button class="four"></button>
-        </section>    
+        </section>
+        
+        <section class="yes-no">
             <hr>
             <h2 class="correct"></h2>
             <h2 class="wrong"></h2>
+        </section>
 
             <section id="submission">
                 <form action="/action_page.php">
