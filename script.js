@@ -3,10 +3,44 @@
 
 function codeQuiz() {
 
-
+//The countdown timer
 var timer = document.querySelector("#timer");
+//Intro section
+var intro = document.querySelector(".intro");
+//Heading and questions
+var heading = document.querySelectorAll(".header");
+//All paragraphs
+var description = document.querySelector(".describe");
+//The Start Button
 var start = document.querySelector("#start");
 
+//Multiple Choice section
+var multChoice = document.querySelector(".mult-choice");
+//Questions
+var question = document.querySelector(".questions");
+//Multiple Choice Buttons
+var firstChoice = document.querySelector(".one");
+var secondChoice = document.querySelector(".two");
+var thirdChoice = document.querySelector(".three");
+var fourthChoice = document.querySelector(".four");
+
+// Correct or Incorrect section
+var yesNo = document.querySelector(".yes-no");
+//Correct or wrong text tha shows up after answer selected
+var correctAnswer = document.querySelector(".correct");
+var wrongAnswer = document.querySelector(".wrong");
+
+//Contains the Form section
+var submission = document.querySelector("#submission");
+//form to enter user's Inititals at end of quiz
+var enterInitials = document.querySelector("form");
+//The empty input box
+var input = document.querySelector(".submit");
+//scorebox on high scores page
+var scorebox =document.querySelector("#scorebox");
+
+
+//Starts the timer if START button is clicked
 start.addEventListener('click', function() {
 var secondsLeft = 75;
 var secondsSubtract = 10;
@@ -25,16 +59,8 @@ var timerCountdown = setInterval(function() {
 });
 }
 
-var heading = document.querySelectorAll("h1");
-var paragraph = document.querySelectorAll("p");
-var description = document.querySelector("#description");
-var firstChoice = document.querySelector(".one");
-var secondChoice = document.querySelector(".two");
-var thirdChoice = document.querySelector(".three");
-var fourthChoice = document.querySelector(".four");
-var correctAnswer = document.querySelector(".correct");
-var wrongAnswer = document.querySelector(".wrong");
-var enterInitials = document.querySelector("form");
+
+
 
 
      
