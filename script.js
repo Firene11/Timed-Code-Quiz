@@ -1,21 +1,31 @@
 //GIVEN I am taking a code quiz WHEN I click the start button
 //THEN a timer starts and I am presented with a question WHEN I answer a question
 
+function codeQuiz() {
 
-document.getElementById("timer").addEventListener("click", function(){
-    var secondsLeft = 75;
+var timer = document.querySelector("#timer");
+var start = document.querySelector("#start");
 
-    function setTimer() {
-    var timerCountdown = setInterval(function() {
-    document.getElementById("timer").innerHTML = secondsLeft;
+start.addEventListener('click', function() {
+var secondsLeft = 75;
+var secondsSubtract = 10;
+	
+var timerCountdown = setInterval(function() {
+    secondsLeft--;
+    timer.textContent = secondsLeft;
+	console.log('!');
 
-        if (secondsLeft <= 0) {
-            start.addEventListener("click", setTimer);
-            clearInterval(timerCountdown);
+    if(secondsLeft === 0) {
+        clearInterval(timerCountdown);
+        console.log("stopped");
     }
-    }, 1000);
-}}
-setTimer();
+
+	}, 1000);
+});
+
+}
+
+codeQuiz();
 
 //------------------------------------
 
