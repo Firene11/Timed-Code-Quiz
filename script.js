@@ -56,7 +56,7 @@ var clearScore = document.querySelector(".clear-high-scores");
 //Starts the timer if START button is clicked
 function setTime() {
 var secondsLeft = 75;
-var secondsSubtract = 10;
+var secondsSubtract = secondsLeft -10;
 	
 var timerCountdown = setInterval(function() {
     secondsLeft--;
@@ -76,7 +76,7 @@ function codeQuiz() {
     multChoice.style.display = "none";
     submission.style.display = "none";
     start.addEventListener('click', function() {
-        if(start)
+        if(start) 
         setTime();
         firstQuestion();
 })}
@@ -89,13 +89,36 @@ function firstQuestion() {
     secondChoice.textContent = "2. Booleans";
     thirdChoice.textContent = "3. Alerts";
     fourthChoice.textContent = "4. Numbers";
+
+    thirdChoice.addEventListener('click', function() {
+        if(thirdChoice) {
+        secondQuestion();
+    } 
+})
+    firstChoice.addEventListener('click', function() {
+    if(firstChoice) {
+    firstQuestion();
+    decreaseTime();
+} 
+})
+    
+}
+
+function secondQuestion() {
+    multChoice.style.display = "block";
+    intro.style.display = "none";
+    question.textContent = "The condition in an if/else statement is enclosed with __________";
+    firstChoice.textContent = "1. Quotes";
+    secondChoice.textContent = "2. Curly Brackets";
+    thirdChoice.textContent = "3. Parenthesis";
+    fourthChoice.textContent = "4. Square Brackets";
 }
 
 
-
-
+function decreaseTime() {
+    timer.textContent = secondsSubtract;
+}
      
-
 
 codeQuiz();
 
