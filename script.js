@@ -18,6 +18,8 @@ var start = document.querySelector("#start");
 var multChoice = document.querySelector(".mult-choice");
 //Questions
 var question = document.querySelector(".questions");
+//Total of questions left to stop timer
+var totalQuestions = 0; 
 //Multiple Choice Buttons
 var firstChoice = document.querySelector(".one");
 var secondChoice = document.querySelector(".two");
@@ -52,6 +54,7 @@ var clearScore = document.querySelector(".clear-high-scores");
 
 
 //Starts the timer if START button is clicked
+function setTime() {
 start.addEventListener('click', function() {
 var secondsLeft = 75;
 var secondsSubtract = 10;
@@ -60,27 +63,34 @@ var timerCountdown = setInterval(function() {
     secondsLeft--;
     timer.textContent = secondsLeft;
 	console.log("Timer has started");
-
-    if(secondsLeft === 0) {
+//Stop timer if there's 0 seconds left or all questions are answered
+    if(secondsLeft === 0 || totalQuestions === totalQuestions.length) {
         clearInterval(timerCountdown);
         console.log("stopped");
     }
 
 	}, 1000);
 });
-
+}
 
 
 function codeQuiz() {
     multChoice.style.display = "none";
     submission.style.display = "none";
 
+    setTime();
     firstQuestion();
 }
 
 function firstQuestion() {
+    question.textContent = "Commonly used data types DO NOT include:";
+    firstChoice.textContent = "1. Strings";
+    secondChoice.textContent = "2. Booleans";
+    thirdChoice.textContent = "3. Alerts";
+    fourthChoice.textContent = "4. Numbers";
 
 }
+
 
 
 
