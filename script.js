@@ -36,8 +36,19 @@ var submission = document.querySelector("#submission");
 var enterInitials = document.querySelector("form");
 //The empty input box
 var input = document.querySelector(".submit");
+
 //scorebox on high scores page
-var scorebox =document.querySelector("#scorebox");
+var scorebox = document.querySelector("#scorebox");
+//Empty array to declare high scores
+var highScores = [];
+//Clear High Scores Button
+var clearScore = document.querySelector(".clear-high-scores");
+
+////////////////////////////////////////////////////////////////////////////
+
+//Questions and Answers
+
+
 
 
 //Starts the timer if START button is clicked
