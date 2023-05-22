@@ -50,7 +50,38 @@ var clearScore = document.querySelector(".clear-high-scores");
 
 //Questions and Answers
 
-
+var qAndA = [
+    {
+        question: "Commonly used datatypes DO NOT include:",
+        choices: ["1. string", "2. boolean", "3. alerts", "4. numbers"],
+        answer: 2
+    },
+ 
+    {
+        question: "The condition in an if/else statement is enclosed with ____.",
+        choices: ["1. quotes", "2. curly brackets", "3. parenthesis", "4. square brackets"],
+        answer: 2
+    },
+ 
+    {
+        question: "Arrays in javascript can be used to store ___.",
+        choices: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
+        answer: 3
+    },
+ 
+    {
+        question: "String values must be enclosed within ___ when being assigned to variables.",
+        choices: ["1. commas", "2. curly brackets", "3. quotes", "4. parenthesis"],
+        answer: 2
+    },
+ 
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choices: ["1. Javascript", "2. terminal/bash", "3. for loops", "4. console.log"],
+        answer: 3
+    }
+ ];
+ 
 
 
 //Starts the timer if START button is clicked
@@ -71,6 +102,10 @@ var timerCountdown = setInterval(function() {
 	}, 1000);
 };
 
+function decreaseTime() {
+    timer.textContent = secondsSubtract;
+    timerCountdown = setInterval(timerCountdown);
+}
 
 function codeQuiz() {
     multChoice.style.display = "none";
@@ -81,43 +116,15 @@ function codeQuiz() {
         firstQuestion();
 })}
 
+
+
 function firstQuestion() {
-    multChoice.style.display = "block";
-    intro.style.display = "none";
-    question.textContent = "Commonly used data types DO NOT include:";
-    firstChoice.textContent = "1. Strings";
-    secondChoice.textContent = "2. Booleans";
-    thirdChoice.textContent = "3. Alerts";
-    fourthChoice.textContent = "4. Numbers";
 
-    thirdChoice.addEventListener('click', function() {
-        if(thirdChoice) {
-        secondQuestion();
-    } 
-})
-    firstChoice.addEventListener('click', function() {
-    if(firstChoice) {
-    firstQuestion();
-    decreaseTime();
-} 
-})
-    
-}
-
-function secondQuestion() {
-    multChoice.style.display = "block";
-    intro.style.display = "none";
-    question.textContent = "The condition in an if/else statement is enclosed with __________";
-    firstChoice.textContent = "1. Quotes";
-    secondChoice.textContent = "2. Curly Brackets";
-    thirdChoice.textContent = "3. Parenthesis";
-    fourthChoice.textContent = "4. Square Brackets";
 }
 
 
-function decreaseTime() {
-    timer.textContent = secondsSubtract;
-}
+
+
      
 
 codeQuiz();
