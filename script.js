@@ -107,18 +107,21 @@ function decreaseTime() {
     timerCountdown = setInterval(timerCountdown);
 }
 
+
 function codeQuiz() {
     multChoice.style.display = "none";
     submission.style.display = "none";
-    start.addEventListener('click', function() {
-        if(start) 
+    yesNo.style.display = "none";
+    document.addEventListener('click', function(event) {
+        if (event.target === start) 
         setTime();
-        firstQuestion();
+        showQuestions();
+        totalQuestions = 0;
 })}
 
 
 
-function firstQuestion() {
+function showQuestions() {
 
 }
 
