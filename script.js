@@ -1,7 +1,7 @@
 //GIVEN I am taking a code quiz WHEN I click the start button
 //THEN a timer starts and I am presented with a question WHEN I answer a question
 
-function codeQuiz() {
+
 
 //The countdown timer
 var timer = document.querySelector("#timer");
@@ -68,9 +68,19 @@ var timerCountdown = setInterval(function() {
 
 	}, 1000);
 });
+
+
+
+function codeQuiz() {
+    multChoice.style.display = "none";
+    submission.style.display = "none";
+
+    firstQuestion();
 }
 
+function firstQuestion() {
 
+}
 
 
 
