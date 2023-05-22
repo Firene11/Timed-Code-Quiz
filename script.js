@@ -32,12 +32,14 @@ var yesNo = document.querySelector(".yes-no");
 var correctAnswer = document.querySelector(".correct");
 var wrongAnswer = document.querySelector(".wrong");
 
+//Results
+var results = document.querySelector("#results");
 //Contains the Form section
 var submission = document.querySelector("#submission");
 //form to enter user's Inititals at end of quiz
 var enterInitials = document.querySelector("form");
 //The empty input box
-var input = document.querySelector(".submit");
+var submitButton = document.querySelector(".submit");
 
 //scorebox on high scores page
 var scorebox = document.querySelector("#scorebox");
@@ -53,32 +55,57 @@ var clearScore = document.querySelector(".clear-high-scores");
 var qAndA = [
     {
         question: "Commonly used datatypes DO NOT include:",
-        choices: ["1. string", "2. boolean", "3. alerts", "4. numbers"],
-        answer: 2
-    },
+        answers: {
+          1: "1. String",
+          2: "2. Boolean",
+          3: "3. Alerts",
+          4: "4. Numbers",
+        },
+        correctAnswer: "3"
+      },
  
     {
         question: "The condition in an if/else statement is enclosed with ____.",
-        choices: ["1. quotes", "2. curly brackets", "3. parenthesis", "4. square brackets"],
-        answer: 2
+        answers: {
+            1: "1. Quotes", 
+            2: "2. Curly brackets",
+            3: "3. Parenthesis",
+            4: "4. Square brackets",
+        },
+        correctAnswer: "3",
     },
  
     {
         question: "Arrays in javascript can be used to store ___.",
-        choices: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
-        answer: 3
+        answers: {
+            1: "1. Numbers and strings", 
+            2: "2. Other arrays", 
+            3: "3. Booleans",
+            4: "4. All of the above",
+        },
+        CorrectAnswer: "4",
     },
  
     {
         question: "String values must be enclosed within ___ when being assigned to variables.",
-        choices: ["1. commas", "2. curly brackets", "3. quotes", "4. parenthesis"],
-        answer: 2
+        answers: {
+            1: "1. Commas",
+            2: "2. Curly brackets",
+            3: "3. Quotes",
+            4: "4. Parenthesis",
+        },
+        correctAnswer: "3"
     },
  
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        choices: ["1. Javascript", "2. terminal/bash", "3. for loops", "4. console.log"],
-        answer: 3
+        answers: {
+            1: "1. Javascript",
+            2: "2. Terminal/bash",
+            3: "3. For loops",
+            4: "4. Console.log",
+        },
+        correctAnswer: "4. Console.log"
     }
  ];
  
@@ -104,7 +131,6 @@ var timerCountdown = setInterval(function() {
 
 function decreaseTime() {
     timer.textContent = secondsSubtract;
-    timerCountdown = setInterval(timerCountdown);
 }
 
 
@@ -113,26 +139,20 @@ function codeQuiz() {
     submission.style.display = "none";
     yesNo.style.display = "none";
     document.addEventListener('click', function(event) {
-        if (event.target === start) 
-        setTime();
-        showQuestions();
+        if (event.target === start)
         totalQuestions = 0;
+        setTime();
+        askQuestions(totalQuestions);
+       
 })}
 
-
-
-function showQuestions() {
-
-}
-
-
-
-
-     
+function showResults(){}
 
 codeQuiz();
 
-//------------------------------------
+//submitButton.addEventListener('click', showResults);
+
+
 
 
 
