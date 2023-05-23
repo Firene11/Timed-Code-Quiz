@@ -33,13 +33,13 @@ var correctAnswer = document.querySelector(".correct");
 var wrongAnswer = document.querySelector(".wrong");
 
 //Results
-var results = document.querySelector("#results");
+var score = document.querySelector("#score");
 //Contains the Form section
 var submission = document.querySelector("#submission");
 //form to enter user's Inititals at end of quiz
-var enterInitials = document.querySelector("form");
+var enterInitials = document.querySelector("#initials");
 //The empty input box
-var submitButton = document.querySelector(".submit");
+var submitButton = document.querySelector("#submit");
 
 //scorebox on high scores page
 var scorebox = document.querySelector("#scorebox");
@@ -108,8 +108,6 @@ var qAndA = [
         correctAnswer: "4. Console.log"
     }
  ];
- 
-
 
 //Starts the timer if START button is clicked
 function setTime() {
@@ -125,30 +123,32 @@ var timerCountdown = setInterval(function() {
         clearInterval(timerCountdown);
         console.log("stopped");
     }
-
 	}, 1000);
 };
 
-function decreaseTime() {
-    timer.textContent = secondsSubtract;
-}
-
-
-function codeQuiz() {
+function startQuiz() {
     multChoice.style.display = "none";
     submission.style.display = "none";
     yesNo.style.display = "none";
-    document.addEventListener('click', function(event) {
-        if (event.target === start)
-        totalQuestions = 0;
+    start.addEventListener('click', function() {
+        if (start) { 
+        intro.style.display = "none";
         setTime();
-        askQuestions(totalQuestions);
-       
-})}
+        askQuestions();      
+        }
+})
+}
+function askQuestions() {
+    multChoice.style.display = "block";
+}
 
-function showResults(){}
+function enterInit() {
+    enterInitials.innerHTML = ""
+    enterInitials.innerHTML = enterInitials.value;
+}
 
-codeQuiz();
+
+startQuiz();
 
 //submitButton.addEventListener('click', showResults);
 
