@@ -21,14 +21,14 @@ var question = document.querySelector(".questions");
 //Total of questions left to stop timer
 var totalQuestions = 0; 
 //Multiple Choice Buttons
-var firstChoice = document.querySelector(".one");
-var secondChoice = document.querySelector(".two");
-var thirdChoice = document.querySelector(".three");
-var fourthChoice = document.querySelector(".four");
+var answerOne = document.querySelector(".one");
+var answerTwo = document.querySelector(".two");
+var answerThree = document.querySelector(".three");
+var answerFour = document.querySelector(".four");
 
 // Correct or Incorrect section
 var yesNo = document.querySelector(".yes-no");
-//Correct or wrong text tha shows up after answer selected
+//Correct or wrong text that shows up after answer selected
 var correctAnswer = document.querySelector(".correct");
 var wrongAnswer = document.querySelector(".wrong");
 
@@ -43,6 +43,8 @@ var submitButton = document.querySelector("#submit");
 
 //scorebox on high scores page
 var scorebox = document.querySelector("#scorebox");
+//Empty string to declare user's score
+var userScore = "";
 //Empty array to declare high scores
 var highScores = [];
 //Clear High Scores Button
@@ -138,9 +140,28 @@ function startQuiz() {
         }
 })
 }
+
 function askQuestions() {
     multChoice.style.display = "block";
+
+    question.innerHTML
+    answerOne.innerHTML;
+    answerTwo.innerHTML;
+    answerThree.innerHTML;
+    answerFour.innerHTML;
 }
+    for (let i = 0; i < qAndA.length; i++) {
+        console.log(qAndA[i]);
+    }
+
+function yesNo() {
+        if (correctAnswer) {
+            //show correct! element
+            } else {
+            //show wrong! element and deduct 10 seconds from timer
+            }
+            console.log(userScore)
+        }
 
 function enterInit() {
     enterInitials.innerHTML = ""
