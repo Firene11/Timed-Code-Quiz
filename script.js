@@ -17,7 +17,7 @@ var start = document.querySelector("#start");
 //Multiple Choice section
 var multChoice = document.querySelector(".mult-choice");
 //Questions
-var question = document.querySelector(".questions");
+var questions = document.querySelector(".questions");
 //Total of questions left to stop timer
 var totalQuestions = 0; 
 //Multiple Choice Buttons
@@ -25,12 +25,13 @@ var answerOne = document.querySelector(".one");
 var answerTwo = document.querySelector(".two");
 var answerThree = document.querySelector(".three");
 var answerFour = document.querySelector(".four");
+var correctAnswer = "";
 
 // Correct or Incorrect section
 var yesNo = document.querySelector(".yes-no");
 //Correct or wrong text that shows up after answer selected
-var correctAnswer = document.querySelector(".correct");
-var wrongAnswer = document.querySelector(".wrong");
+var correct = document.querySelector(".correct");
+var wrong = document.querySelector(".wrong");
 
 //Results
 var score = document.querySelector("#score");
@@ -56,58 +57,48 @@ var clearScore = document.querySelector(".clear-high-scores");
 
 var qAndA = [
     {
-        question: "Commonly used datatypes DO NOT include:",
-        answers: {
-          1: "1. String",
-          2: "2. Boolean",
-          3: "3. Alerts",
-          4: "4. Numbers",
-        },
-        correctAnswer: "3"
+        questions: "Commonly used datatypes DO NOT include:",
+        answerOne: "1. String",
+        answerTwo: "2. Boolean",
+        answerThree: "3. Alerts",
+        answerFour: "4. Numbers",
+        correctAnswer: answerThree,
       },
  
     {
-        question: "The condition in an if/else statement is enclosed with ____.",
-        answers: {
-            1: "1. Quotes", 
-            2: "2. Curly brackets",
-            3: "3. Parenthesis",
-            4: "4. Square brackets",
-        },
-        correctAnswer: "3",
+        questions: "The condition in an if/else statement is enclosed with ____.",
+        answerOne: "1. Quotes", 
+        answerTwo: "2. Curly brackets",
+        answerThree: "3. Parenthesis",
+        answerFour: "4. Square brackets",
+        correctAnswer: answerThree,
     },
  
     {
-        question: "Arrays in javascript can be used to store ___.",
-        answers: {
-            1: "1. Numbers and strings", 
-            2: "2. Other arrays", 
-            3: "3. Booleans",
-            4: "4. All of the above",
-        },
-        CorrectAnswer: "4",
+        questions: "Arrays in javascript can be used to store ___.",
+        answerOne: "1. Numbers and strings", 
+        answerTwo: "2. Other arrays", 
+        answerThree: "3. Booleans",
+        answerFour: "4. All of the above",
+        CorrectAnswer: answerFour,
     },
  
     {
-        question: "String values must be enclosed within ___ when being assigned to variables.",
-        answers: {
-            1: "1. Commas",
-            2: "2. Curly brackets",
-            3: "3. Quotes",
-            4: "4. Parenthesis",
-        },
-        correctAnswer: "3"
+        questions: "String values must be enclosed within ___ when being assigned to variables.",
+        answerOne: "1. Commas",
+        answerTwo: "2. Curly brackets",
+        answerThree: "3. Quotes",
+        answerFour: "4. Parenthesis",
+        correctAnswer: answerThree,
     },
  
     {
-        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        answers: {
-            1: "1. Javascript",
-            2: "2. Terminal/bash",
-            3: "3. For loops",
-            4: "4. Console.log",
-        },
-        correctAnswer: "4. Console.log"
+        questions: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        answerOne: "1. Javascript",
+        answerTwo: "2. Terminal/bash",
+        answerThree: "3. For loops",
+        answerFour: "4. Console.log",
+        correctAnswer: answerFour,
     }
  ];
 
@@ -143,19 +134,13 @@ function startQuiz() {
 
 function askQuestions() {
     multChoice.style.display = "block";
-
-    question.innerHTML
-    answerOne.innerHTML;
-    answerTwo.innerHTML;
-    answerThree.innerHTML;
-    answerFour.innerHTML;
+    var i = 0;
+    question.innerHTML = qAnda[i];
 }
-    for (let i = 0; i < qAndA.length; i++) {
-        console.log(qAndA[i]);
-    }
+
 
 function yesNo() {
-        if (correctAnswer) {
+        if (correct) {
             //show correct! element
             } else {
             //show wrong! element and deduct 10 seconds from timer
