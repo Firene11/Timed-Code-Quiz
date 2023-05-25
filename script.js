@@ -116,7 +116,6 @@ var timerCountdown = setInterval(function() {
 function startQuiz() {
     multChoice.style.display = "none";
     submission.style.display = "none";
-    yesNo.style.display = "none";
     start.addEventListener('click', function() {
         if (start) { 
         intro.style.display = "none";
@@ -129,20 +128,37 @@ function startQuiz() {
 function askQuestions() {
     multChoice.style.display = "block";
     var i = 0;
-    if (i < qAndA.length)
-    questionBttn.innerHTML = qAndA[i].questionBttn;
-    ansOneBttn.innerHTML = ansOneBttn[i].ansOneBttn;
+    if (i <= qAndA.length) {
+    questionBttn.textContent = qAndA[i].question;
+    ansOneBttn.textContent = qAndA[i].answerThree;
+    ansTwoBttn.textContent = qAndA[i].answerTwo;
+    ansThreeBttn.textContent = qAndA[i].answerThree;
+    ansFourBttn.textContent = qAndA[i].answerFour;
+}
+}
+function correctAnswers() {
+    if (i <=qAndA.length) {
+        correctAnswer === qAndA[i].answerThree;
+        correctAnswer ===qAndA[i].answerThree;
+    }
+    yesNo();
 }
 
-
-function yesNo() {
-        if (correct) {
-            //show correct! element
-            } else {
-            //show wrong! element and deduct 10 seconds from timer
-            }
-            console.log(userScore)
-        }
+function yesNo(event) {
+    if (i >= qAndA.length) {
+    clearInterval(timeInterval);
+    } else if (event === qAndA[i].correctAnswer) {
+    correct.textContent = "Correct!";
+    console.log("You are correct!")
+    } else {
+    wrong.textContent = "Wrong!";
+    console.log("You are wrong!")
+    secondsLeft -= 10;
+    }
+    userScore = secondsLeft;
+    i++;
+    askQuestions();
+    }
 
 function enterInit() {
     enterInitials.innerHTML = ""
