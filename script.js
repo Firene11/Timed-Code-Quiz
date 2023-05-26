@@ -115,10 +115,10 @@ function askQuestions() {
     var i = 0;
     if (i <= qAndA.length) {
     questionBttn.textContent = qAndA[i].question;
-    ansOneBttn.textContent = qAndA[i].answerOne;
-    ansTwoBttn.textContent = qAndA[i].answerTwo;
-    ansThreeBttn.textContent = qAndA[i].answerThree;
-    ansFourBttn.textContent = qAndA[i].answerFour;
+    ansOneBttn.textContent = qAndA[i].choice[0];
+    ansTwoBttn.textContent = qAndA[i].choice[1];
+    ansThreeBttn.textContent = qAndA[i].choice[2];
+    ansFourBttn.textContent = qAndA[i].choice[3];
 }
 }
 
