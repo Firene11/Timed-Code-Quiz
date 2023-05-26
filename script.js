@@ -1,8 +1,3 @@
-//GIVEN I am taking a code quiz WHEN I click the start button
-//THEN a timer starts and I am presented with a question WHEN I answer a question
-
-
-
 //The countdown timer
 var timer = document.querySelector("#timer");
 //Intro section
@@ -51,7 +46,7 @@ var highScores = [];
 //Clear High Scores Button
 var clearScore = document.querySelector(".clear-high-scores");
 
-////////////////////////////////////////////////////////////////////////////
+//
 
 //Questions and Answers
 
@@ -105,12 +100,15 @@ function startQuiz() {
         if (start) { 
         intro.style.display = "none";
         setTime();
-        askQuestions();      
+        runQuestions();      
         }
 })
 }
 
-function askQuestions() {
+//GIVEN I am taking a code quiz WHEN I click the start button
+//THEN a timer starts and I am presented with a question WHEN I answer a question
+
+function runQuestions() {
     multChoice.style.display = "block";
     var i = 0;
     if (i <= qAndA.length) {
@@ -120,8 +118,22 @@ function askQuestions() {
     ansThreeBttn.textContent = qAndA[i].choice[2];
     ansFourBttn.textContent = qAndA[i].choice[3];
 }
+    i++;
 }
 
+function askQuestion() {
+    for (var i = 0; i <= qAndA.length; i++);
+    if (qAndA.choice[2]) {
+        console.log("Correct");
+        askQuestion();
+    }
+}
+
+//THEN I am presented with another question WHEN I answer a question incorrectly
+//THEN time is subtracted from the clock WHEN all questions are answered or the timer reaches 0
+
+//THEN the game is over WHEN the game is over
+//THEN I can save my initials and score
 
 function enterInit() {
     enterInitials.innerHTML = ""
@@ -131,13 +143,9 @@ function enterInit() {
 
 startQuiz();
 
-//submitButton.addEventListener('click', showResults);
 
 
 
 
 
-//THEN I am presented with another question WHEN I answer a question incorrectly
-//THEN time is subtracted from the clock WHEN all questions are answered or the timer reaches 0
-//THEN the game is over WHEN the game is over
-//THEN I can save my initials and score
+
