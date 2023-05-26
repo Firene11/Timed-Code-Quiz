@@ -21,11 +21,11 @@ var questionBttn = document.querySelector(".questions");
 //Total of questions left to stop timer
 var totalQuestions = 0; 
 //Multiple Choice Buttons
-var ansOneBttn = document.querySelector(".one");
-var ansTwoBttn = document.querySelector(".two");
-var ansThreeBttn = document.querySelector(".three");
-var ansFourBttn = document.querySelector(".four");
-var correctAnswer = "";
+var ansOneBttn = document.querySelector("#one");
+var ansTwoBttn = document.querySelector("#two");
+var ansThreeBttn = document.querySelector("#three");
+var ansFourBttn = document.querySelector("#four");
+var correctAnswer = document.querySelector(".answer");
 
 // Correct or Incorrect section
 var yesNo = document.querySelector(".yes-no");
@@ -57,43 +57,28 @@ var clearScore = document.querySelector(".clear-high-scores");
 
 var qAndA = [{
         question: "Commonly used datatypes DO NOT include:",
-        answerOne: "1. String",
-        answerTwo: "2. Boolean",
-        answerThree: "3. Alerts",
-        answerFour: "4. Numbers",
-        correctAnswer: "3. Alerts",
+        choice: ["1. String", "2. Boolean", "3. Alerts", "4. Numbers"],
+        answer: "3. Alerts",
       },
     {
         question: "The condition in an if/else statement is enclosed with ____.",
-        answerOne: "1. Quotes", 
-        answerTwo: "2. Curly brackets",
-        answerThree: "3. Parenthesis",
-        answerFour: "4. Square brackets",
-        correctAnswer: "3. Parenthesis",
+        choice: ["1. Quotes", "2. Curly brackets", "3. Parenthesis", "4. Square brackets"],
+        answer: "3. Parenthesis",
     },
     {
         question: "Arrays in javascript can be used to store ___.",
-        answerOne: "1. Numbers and strings", 
-        answerTwo: "2. Other arrays", 
-        answerThree: "3. Booleans",
-        answerFour: "4. All of the above",
-        CorrectAnswer: "4. All of the above,"
+        choice: ["1. Numbers and strings", "2. Other arrays", "3. Booleans", "4. All of the above"],
+        answer: "4. All of the above,"
     },
     {
         question: "String values must be enclosed within ___ when being assigned to variables.",
-        answerOne: "1. Commas",
-        answerTwo: "2. Curly brackets",
-        answerThree: "3. Quotes",
-        answerFour: "4. Parenthesis",
-        correctAnswer: "3. Quotes",
+        choice: ["1. Commas", "2. Curly brackets", "3. Quotes", "4. Parenthesis"],
+        answer: "3. Quotes",
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        answerOne: "1. Javascript",
-        answerTwo: "2. Terminal/bash",
-        answerThree: "3. For loops",
-        answerFour: "4. Console.log",
-        correctAnswer: "4. Console.log",
+        choice: ["1. Javascript", "2. Terminal/bash", "3. For loops", "4. Console.log"],
+        answer: "4. Console.log",
     }];
 
 //Starts the timer if START button is clicked
@@ -130,35 +115,13 @@ function askQuestions() {
     var i = 0;
     if (i <= qAndA.length) {
     questionBttn.textContent = qAndA[i].question;
-    ansOneBttn.textContent = qAndA[i].answerThree;
+    ansOneBttn.textContent = qAndA[i].answerOne;
     ansTwoBttn.textContent = qAndA[i].answerTwo;
     ansThreeBttn.textContent = qAndA[i].answerThree;
     ansFourBttn.textContent = qAndA[i].answerFour;
 }
 }
-function correctAnswers() {
-    if (i <=qAndA.length) {
-        correctAnswer === qAndA[i].answerThree;
-        correctAnswer ===qAndA[i].answerThree;
-    }
-    yesNo();
-}
 
-function yesNo(event) {
-    if (i >= qAndA.length) {
-    clearInterval(timeInterval);
-    } else if (event === qAndA[i].correctAnswer) {
-    correct.textContent = "Correct!";
-    console.log("You are correct!")
-    } else {
-    wrong.textContent = "Wrong!";
-    console.log("You are wrong!")
-    secondsLeft -= 10;
-    }
-    userScore = secondsLeft;
-    i++;
-    askQuestions();
-    }
 
 function enterInit() {
     enterInitials.innerHTML = ""
