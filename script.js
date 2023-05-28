@@ -57,37 +57,30 @@ var quiz = {
     ]
 }
 
-
-
+// High scores
+var highScores = []
 
 //Starts the timer if START button is clicked
 function setTime() {
-var secondsLeft = 75;
-var secondsSubtract = secondsLeft -10;
-	
-var timerCountdown = setInterval(function() {
-    secondsLeft--;
-    timer.textContent = secondsLeft;
-	console.log("Timer has started");
-//Stop timer if there's 0 seconds left or all questions are answered
-    if(secondsLeft === 0 || totalQuestions === totalQuestions.length) {
-        clearInterval(timerCountdown);
-        console.log("stopped");
-    }
-	}, 1000);
-};
+    timer.countdown = timer.seconds
 
-function startQuiz() {
-    multChoice.style.display = "none";
-    submission.style.display = "none";
-    start.addEventListener('click', function() {
-        if (start) { 
-        intro.style.display = "none";
-        setTime();
-        runQuestions();      
+    timer.interval = setInterval(function() {
+        timer.countdown--;
+        timer.element.textContent = timer.countdown;
+
+        //Stop timer if there's 0 seconds left or all questions are answered
+        if (timer.countdown <= 0) {
+            timer.countdown = 0;
+            timer.element.textContent = timer.countdown;
+            setCompleted('You ran out of time :(')
+            // Ran out of time
+        } else if (quiz.position === quiz.questions.length) {
+            // Finished quiz
+            setCompleted('Congratulations you completed the quiz!')
         }
-})
+    }, 1000);
 }
+
 
 //GIVEN I am taking a code quiz WHEN I click the start button
 //THEN a timer starts and I am presented with a question WHEN I answer a question
