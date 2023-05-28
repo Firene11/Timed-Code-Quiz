@@ -177,16 +177,34 @@ function runQuestions() {
     }
 }
 
-//GIVEN I am taking a code quiz WHEN I click the start button
-//THEN a timer starts and I am presented with a question WHEN I answer a question
-
-
-
 //THEN I am presented with another question WHEN I answer a question incorrectly
 //THEN time is subtracted from the clock WHEN all questions are answered or the timer reaches 0
 
 //THEN the game is over WHEN the game is over
 //THEN I can save my initials and score
+
+function setScore() {
+    var initials = document.getElementById('initials').value
+    highScores.push({
+        initials: initials,
+        score: quiz.score
+    })
+    highScores.sort(function(a, b) {
+        return b.score - a.score;
+    });
+
+    console.log(highScores)
+    localStorage.setItem('scores', JSON.stringify(highScores));
+}
+
+function getScores() {
+    var localScores = JSON.parse(localStorage.getItem('scores'));
+    console.log(localScores)
+    if (localScores)
+        highScores = localScores;
+}
+
+initializeQuiz();
 
 
 
