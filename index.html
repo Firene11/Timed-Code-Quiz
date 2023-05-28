@@ -10,48 +10,51 @@
 </head>
 <body>
 
-        <nav>
-            <section id="high-scores"><a href="./high-scores.html">View High Scores</a></section>
-            <section id="time">Time:<span id="timer">75</span></section>
-    </nav>
-        
-    <main>
-        <card>
+<nav>
+    <div id="high-scores">
+        <a href="./high-scores.html">View High Scores</a>
+    </div>
+    <div id="time">
+        Time:<span id="timer">75</span> Score: <span class="score">0</span>
+    </div>
+</nav>
+
+<main>
+    <card>
         <section class="intro">
             <h1 class="header">Timed Coding Quiz!</h1>
-            <p class="describe">Try to answer the following code-related questions within the time limit. But... keep in mind that 
-            wrong answers will deduct your score by 10 seconds.</p>
-       
+            <p class="describe">
+                Try to answer the following code-related questions within the time limit. But... keep in mind that
+                wrong answers will deduct your timer by 10 seconds.
+            </p>
+
             <button id="start">Start Quiz</button>
         </section>
 
-        <section class="mult-choice">
-            <h1 class="questions"></h1>
-            <ul>
-            <li><button id="one" class="answer"></button></li>
-            <li><button id="two" class="answer"></button></li>
-            <li><button id="three" class="answer"></button></li>
-            <li><button id="four" class="answer"></button></li>
-        </ul>
-        </section>
-        
-        <section class="yes-no">
-            <hr>
-            <h2 class="correct"></h2>
-            <h2 class="wrong"></h2>
+        <section class="flex-container" id="quiz">
+            <h1 class="question" id="question"></h1>
+            <ol id="choices">
+                <li><button id="one" class="answer"></button></li>
+                <li><button id="two" class="answer"></button></li>
+                <li><button id="three" class="answer"></button></li>
+                <li><button id="four" class="answer"></button></li>
+            </ol>
         </section>
 
-            <section id="submission">
-                    <p>Enter Initials:</p>
-                    <input id="initials">
-                    <button id="submit">Submit</button>
-                </form>
-            </section>
-        </card>
+        <section id="completed">
+            <p id="message"></p>
+            <p>Final Score <span class="score"></span> / <span id="questionCount"></span></p>
 
+            <form id="saveScore">
+                <label for="initials">Enter Initials</label>
+                <input type="text" id="initials" placeholder="Enter Initials"/>
+                <button id="save">Submit</button>
+            </form>
+            <button onclick="startQuiz()">Restart Quiz</button>
+        </section>
+    </card>
+</main>
 
-</main> 
-
-<script src="script.js"></script>    
+<script src="script.js"></script>
 </body>
 </html>
