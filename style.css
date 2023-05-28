@@ -2,10 +2,10 @@ body, html {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightgray;
-   }
+}
 
 nav {
-    display: flex; 
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0px;
@@ -53,7 +53,7 @@ label {
     font-weight: bold;
 }
 
-.mult-choice {
+.flex-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -72,7 +72,11 @@ label {
     text-align: center;
 }
 
-button {
+#quiz, #completed {
+    display: none;
+}
+
+button, .btn {
     margin-bottom: 10px;
     margin-right: 10px;
     padding: 8px 12px;
@@ -119,14 +123,14 @@ input {
     border-radius: 4px;
     height: 24px;
     width: 300px;
-  }
+}
 
-  #scorebox {
+#scorebox {
     background-color: gray;
     width: 500px;
     font-size: 14px;
     padding: 8px;
-  }
+}
 
 a {
     text-decoration: none;
