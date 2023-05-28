@@ -130,6 +130,16 @@ quiz.elements.clearScores.addEventListener('click', function() {
 })
 }
 
+function startQuiz() {
+    quiz.score = 0;
+    quiz.position = 0;
+
+    quiz.elements.intro.style.display = "none";
+    quiz.elements.completed.style.display = 'none';
+
+    setTime();
+    runQuestions();
+}
 
 //GIVEN I am taking a code quiz WHEN I click the start button
 //THEN a timer starts and I am presented with a question WHEN I answer a question
