@@ -81,38 +81,58 @@ function setTime() {
     }, 1000);
 }
 
+function setCompleted(message) {
+    clearInterval(timer.interval);
+    quiz.elements.container.style.display = 'none';
+    quiz.elements.completed.style.display = 'block';
+
+    quiz.elements.questionCount.innerText = quiz.questions.length;
+    quiz.elements.message.innerText = message;
+}
+
+function initializeQuiz() {
+    // Check local storage for scores
+    getScores()
+
+    if (quiz.elements.scoreBox && highScores.length > 0) {
+        for (var i = 0; i < highScores.length; i++) {
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(`${highScores[i].initials} : ${highScores[i].score}`));
+            quiz.elements.scoreBox.appendChild(li);
+        }
+    }
+
+// Listen to start button
+if (quiz.elements.start)
+quiz.elements.start.addEventListener('click', function() {
+    startQuiz()
+})
+
+// Listen to answer buttons
+if (quiz.elements.container)
+document.querySelectorAll('.answer').forEach(button => {
+    button.addEventListener('click', event => {
+        onCheckAnswer(event)
+    })
+})
+
+// Listen to score submit
+if (quiz.elements.save)
+quiz.elements.save.addEventListener('click', function() {
+    setScore()
+})
+
+// Listen to score clear
+if (quiz.elements.clearScores)
+quiz.elements.clearScores.addEventListener('click', function() {
+    localStorage.removeItem('scores');
+    quiz.elements.scoreBox.innerText = ''
+})
+}
+
 
 //GIVEN I am taking a code quiz WHEN I click the start button
 //THEN a timer starts and I am presented with a question WHEN I answer a question
-
-function askQuestion() {
-    for (var i = 0; i <= qAndA.length; i++)
-        console.log("ask a question");
-        runQuestions();
-    }
-
-function runQuestions() {
-    multChoice.style.display = "block";
-    var i = 0;
-    if (i <= qAndA.length) {
-    questionBttn.innerHTML = qAndA[i].question;
-    ansOneBttn.innerHTML = qAndA[i].choice[0];
-    ansTwoBttn.innerHTML = qAndA[i].choice[1];
-    ansThreeBttn.innerHTML = qAndA[i].choice[2];
-    ansFourBttn.innerHTML = qAndA[i].choice[3];
-}
-
-}
-
-function correctAnswer() {
-    if (qAndA.choice === qAndA.answer) {
-        console.log("Correct!");
-        correctAnswer.innerHTML = "Correct!";
-    } else {
-        console.log("Wrong");
-        wrong.innerHTML = "Wrong";
-    }
-}
 
 
 
@@ -122,13 +142,6 @@ function correctAnswer() {
 //THEN the game is over WHEN the game is over
 //THEN I can save my initials and score
 
-function enterInit() {
-    enterInitials.innerHTML = ""
-    enterInitials.innerHTML = enterInitials.value;
-}
-
-
-startQuiz();
 
 
 
