@@ -79,6 +79,7 @@ var qAndA = [{
 //Starts the timer if START button is clicked
 function setTime() {
 var secondsLeft = 75;
+var secondsSubtract = secondsLeft -10;
 	
 var timerCountdown = setInterval(function() {
     secondsLeft--;
@@ -99,7 +100,7 @@ function startQuiz() {
         if (start) { 
         intro.style.display = "none";
         setTime();
-        runQuestion();      
+        runQuestions();      
         }
 })
 }
@@ -107,41 +108,26 @@ function startQuiz() {
 //GIVEN I am taking a code quiz WHEN I click the start button
 //THEN a timer starts and I am presented with a question WHEN I answer a question
 
-var lastQ = qAndA.length - 1;
-var currentQ = 0;
-var count = 0;
-
-function runQuestion() {
+function runQuestions() {
     multChoice.style.display = "block";
-    var q = qAndA[currentQ];
-    
-    questionBttn.textContent = q.question;
-    ansOneBttn.textContent = q.choice[0];
-    ansTwoBttn.textContent = q.choice[1];
-    ansThreeBttn.textContent = q.choice[2];
-    ansFourBttn.textContent = q.choice[3];
+    var i = 0;
+    if (i <= qAndA.length) {
+    questionBttn.innerHTML = qAndA[i].question;
+    ansOneBttn.innerHTML = qAndA[i].choice[0];
+    ansTwoBttn.innerHTML = qAndA[i].choice[1];
+    ansThreeBttn.innerHTML = qAndA[i].choice[2];
+    ansFourBttn.innerHTML = qAndA[i].choice[3];
+}
+    i++;
 }
 
-function checkAnswer(answer){
-    if(answer == qAndA[currentQ].correct){
-        console.log("Correct!");
-        correct.textContent = "Correct!";
-    }else{
-        console.log("wrong")
-        wrong.textContent = "Wrong";
-        // subtract 10 seconds from timer
-    }
-    count = 0;
-    if(currentQ < lastQ){
-        currentQ++;
-        runQuestion();
-    }else{
-        // end the quiz and show the score
-        clearInterval(timerCountdown);
-        userScore();
+function askQuestion() {
+    for (var i = 0; i <= qAndA.length; i++);
+    if (qAndA.choice[2]) {
+        console.log("Correct");
+        askQuestion();
     }
 }
-
 
 //THEN I am presented with another question WHEN I answer a question incorrectly
 //THEN time is subtracted from the clock WHEN all questions are answered or the timer reaches 0
@@ -149,15 +135,13 @@ function checkAnswer(answer){
 //THEN the game is over WHEN the game is over
 //THEN I can save my initials and score
 
-function userScore() {
-    enterInitials.textContent = ""
-    enterInitials.textContent = enterInitials.value;
+function enterInit() {
+    enterInitials.innerHTML = ""
+    enterInitials.innerHTML = enterInitials.value;
 }
 
 
 startQuiz();
-
-
 
 
 
