@@ -148,7 +148,7 @@ function onCheckAnswer(usersAnswer) {
 
     if (answer === usersAnswer.target.innerText) {
         console.log('Correct');
-        
+        document.querySelector('.yes').textContent = "Correct!";
         quiz.position++
 
         // Increment score
@@ -163,7 +163,8 @@ function onCheckAnswer(usersAnswer) {
     } else {
         // Take a penalty
         timer.countdown = timer.countdown - timer.penalty
-        usersAnswer.target.style.background = 'red'
+        usersAnswer.target.style.background = 'red';
+        document.querySelector('.no').textContent = "Wrong!";
     }
 }
 
