@@ -141,6 +141,42 @@ function startQuiz() {
     runQuestions();
 }
 
+function onCheckAnswer(usersAnswer) {
+    var answer = quiz.questions[quiz.position].answer
+
+    if (answer === usersAnswer.target.innerText) {
+        console.log('Correct')
+        quiz.position++
+
+        // Increment score
+        quiz.score++
+        // Visually Update Score elements
+        quiz.elements.score.forEach(function (score) {
+            score.innerText = quiz.score;
+        })
+
+        // Next Question
+        runQuestions()
+    } else {
+        // Take a penalty
+        timer.countdown = timer.countdown - timer.penalty
+        usersAnswer.target.style.background = 'red'
+    }
+}
+
+function runQuestions() {
+    if (quiz.elements.container.style.display !== 'block')
+        quiz.elements.container.style.display = 'block';
+
+    if (quiz.position < quiz.questions.length) {
+        quiz.elements.question.textContent = quiz.questions[quiz.position].question;
+        document.querySelectorAll('.answer').forEach(function (button, index) {
+            button.textContent = quiz.questions[quiz.position].choice[index];
+            button.removeAttribute('style');
+        })
+    }
+}
+
 //GIVEN I am taking a code quiz WHEN I click the start button
 //THEN a timer starts and I am presented with a question WHEN I answer a question
 
