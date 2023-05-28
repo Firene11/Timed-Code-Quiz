@@ -20,6 +20,8 @@ var quiz = {
         question: document.querySelector(".question"),
         buttons: document.querySelector(".answer"),
         score: document.querySelectorAll(".score"),
+        correct: document.querySelector(".yes"),
+        wrong: document.querySelector(".no"),
         completed: document.querySelector("#completed"),
         timeout: document.querySelector("#timeout"),
         message: document.querySelector("#message"),
@@ -145,7 +147,8 @@ function onCheckAnswer(usersAnswer) {
     var answer = quiz.questions[quiz.position].answer
 
     if (answer === usersAnswer.target.innerText) {
-        console.log('Correct')
+        console.log('Correct');
+        
         quiz.position++
 
         // Increment score
