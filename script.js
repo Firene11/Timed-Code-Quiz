@@ -1,13 +1,11 @@
 //The countdown timer
-var timer = document.querySelector("#timer");
-//Intro section
-var intro = document.querySelector(".intro");
-//Heading and questions
-var heading = document.querySelectorAll(".header");
-//All paragraphs
-var description = document.querySelector(".describe");
-//The Start Button
-var start = document.querySelector("#start");
+var timer = {
+    seconds: 75,
+    penalty: 10,
+    countdown: null,
+    interval: null,
+    element: document.querySelector("#timer")
+};
 
 //Multiple Choice section
 var multChoice = document.querySelector(".mult-choice");
@@ -108,6 +106,12 @@ function startQuiz() {
 //GIVEN I am taking a code quiz WHEN I click the start button
 //THEN a timer starts and I am presented with a question WHEN I answer a question
 
+function askQuestion() {
+    for (var i = 0; i <= qAndA.length; i++)
+        console.log("ask a question");
+        runQuestions();
+    }
+
 function runQuestions() {
     multChoice.style.display = "block";
     var i = 0;
@@ -118,16 +122,20 @@ function runQuestions() {
     ansThreeBttn.innerHTML = qAndA[i].choice[2];
     ansFourBttn.innerHTML = qAndA[i].choice[3];
 }
-    i++;
+
 }
 
-function askQuestion() {
-    for (var i = 0; i <= qAndA.length; i++);
-    if (qAndA.choice[2]) {
-        console.log("Correct");
-        askQuestion();
+function correctAnswer() {
+    if (qAndA.choice === qAndA.answer) {
+        console.log("Correct!");
+        correctAnswer.innerHTML = "Correct!";
+    } else {
+        console.log("Wrong");
+        wrong.innerHTML = "Wrong";
     }
 }
+
+
 
 //THEN I am presented with another question WHEN I answer a question incorrectly
 //THEN time is subtracted from the clock WHEN all questions are answered or the timer reaches 0
