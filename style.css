@@ -99,11 +99,17 @@ button:hover {
     background-color: rgb(1, 121, 168);
 }
 
-hr {
+.yes-no {
+    display: flex;
+    justify-content: center;
+}
+
+#check-answer {
     color: gray;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: -10px;
+    text-decoration: overline;
+    font-style: italic;
+    font-weight: 100;
+    width: 50%;
 }
 
 h2 {
