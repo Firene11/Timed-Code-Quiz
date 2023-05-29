@@ -149,16 +149,23 @@ button a {
 
 /* Tablets */
 @media screen and (max-width: 992px) {
+    input {
+        width: 100px;
+    }
 
   }
 
  /* Large smartphones */
  @media screen and (max-width: 768px) {
-
+    input {
+        width: 100px;
+    }
 
   }
 
    /* Small smartphones */
    @media screen and (max-width: 576px) {
-   
+    input {
+        width: 100px;
+    }
 }
