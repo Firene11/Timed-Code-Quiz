@@ -152,6 +152,9 @@ button a {
     input {
         width: 100px;
     }
+    #completed {
+        width: 50%;
+    }
 
   }
 
@@ -160,6 +163,9 @@ button a {
     input {
         width: 100px;
     }
+    #completed {
+        width: 50%;
+    }
 
   }
 
@@ -167,5 +173,8 @@ button a {
    @media screen and (max-width: 576px) {
     input {
         width: 100px;
+    }
+    #completed {
+        width: 50%;
     }
 }
