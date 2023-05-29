@@ -20,7 +20,7 @@ var quiz = {
         question: document.querySelector(".question"),
         buttons: document.querySelector(".answer"),
         score: document.querySelectorAll(".score"),
-        checkAnswer: document.querySelector(".check-answer"),
+        checkAnswer: document.querySelector("#check-answer"),
         completed: document.querySelector("#completed"),
         timeout: document.querySelector("#timeout"),
         message: document.querySelector("#message"),
@@ -147,6 +147,8 @@ function onCheckAnswer(usersAnswer) {
 
     if (answer === usersAnswer.target.innerText) {
         console.log('Correct');
+        correct();
+        //display correct answer
         quiz.position++
 
         // Increment score
@@ -157,16 +159,21 @@ function onCheckAnswer(usersAnswer) {
         })
         // Next Question
         runQuestions()
-    } else if (answer !== usersAnswer.target.innerText) {
-        console.log('Wrong');
- } else {
+        } else {
+        wrong();
         // Take a penalty
         timer.countdown = timer.countdown - timer.penalty
         usersAnswer.target.style.background = 'red'
     }
 }
 //
+function correct() {
+    document.querySelector("#check-answer").innerText = "Correct!";
+}
 
+function wrong() {
+    document.querySelector("#check-answer").innerText = "Wrong!";
+}
 //
 function runQuestions() {
     if (quiz.elements.container.style.display !== 'block')
