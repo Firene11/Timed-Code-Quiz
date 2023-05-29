@@ -194,7 +194,7 @@ function runQuestions() {
 //THEN the game is over WHEN the game is over
 //THEN I can save my initials and score
 
-function setScore() {
+function setScore(score, highscores) {
     var initials = document.getElementById('initials').value
     highScores.push({
         initials: initials,
@@ -204,21 +204,17 @@ function setScore() {
         return b.score - a.score;
     });
 
-    console.log(highScores)
+    console.log(highScores);
     localStorage.setItem('scores', JSON.stringify(highScores));
 }
 
 function getScores() {
     var localScores = JSON.parse(localStorage.getItem('scores'));
-    console.log(localScores)
+    console.log(localScores);
     if (localScores)
         highScores = localScores;
 }
 
+
+ 
 initializeQuiz();
-
-
-
-
-
-
