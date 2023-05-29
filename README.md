@@ -12,10 +12,9 @@ To use this app, you click the start button, a timer starts and you are presente
 https://firene11.github.io/Timed-Code_Quiz
 
 ## Screenshot
-
+screenshot.jpg
 
 ## Credits
-N/A
 
 ## License
 Please refer to the LICENSE in the repo.
