@@ -158,6 +158,9 @@ button a {
     #score-buttons {
         width: 50%;
     }
+    #scorebox {
+        width: 50%;
+    }
 
   }
 
@@ -172,6 +175,10 @@ button a {
     #score-buttons {
         width: 50%;
     }
+    #scorebox {
+        width: 50%;
+    }
+
 
   }
 
@@ -186,4 +193,8 @@ button a {
     #score-buttons {
         width: 50%;
     }
+    #scorebox {
+        width: 50%;
+    }
+
 }
