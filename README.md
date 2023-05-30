@@ -12,7 +12,7 @@ To use this app, you click the start button, a timer starts and you are presente
 https://firene11.github.io/Timed-Code-Quiz/
 
 ## Screenshot
-[screenshot.jpg](https://github.com/Firene11/Timed-Code-Quiz/blob/2e86c71aa59a6a255476fcf38af0b5f7ce73ce47/screenshot.jpg)
+[[screenshot.jpg](https://github.com/Firene11/Timed-Code-Quiz/blob/2e86c71aa59a6a255476fcf38af0b5f7ce73ce47/screenshot.jpg)](https://github.com/Firene11/Timed-Code-Quiz/blob/2e86c71aa59a6a255476fcf38af0b5f7ce73ce47/screenshot.jpg)
 
 ## Credits
 
